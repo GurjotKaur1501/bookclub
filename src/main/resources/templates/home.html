@@ -1,27 +1,47 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Club - Home</title>
+    <!-- Bootstrap CSS -->
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+    >
 </head>
-<body>
-<header>
-    <h1 th:text="${greeting}">Welcome to Book Club</h1>
-    <p>Today's date: <span th:text="${date}">2025-11-11</span></p>
-</header>
-
-<nav>
-    <a href="/home">Home</a> |
-    <a href="/books">Recommended books</a> |
-    <a href="/genre">Genres</a>
+<body class="bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="/home">📚 Book Club</a>
+        <div class="navbar-nav">
+            <a class="nav-link" href="/home">Home</a>
+            <a class="nav-link" href="/books">Books</a>
+            <a class="nav-link" href="/genre">Genres</a>
+        </div>
+    </div>
 </nav>
 
-<section>
-    <p>This is a simple Book Club web application for group <strong th:text="${group}">se.yrgo</strong>.</p>
-</section>
+<div class="container my-5">
+    <div class="text-center">
+        <h1 class="mb-3" th:text="${greeting}">Welcome to Book Club</h1>
+        <p class="lead">Today's date: <span th:text="${date}">2025-11-11</span></p>
+    </div>
 
-<footer>
-    <p>Group: <span th:text="${group}">se.yrgo</span></p>
+    <div class="card shadow-sm mt-5">
+        <div class="card-body text-center">
+            <h4 class="card-title">Group Information</h4>
+            <p class="card-text">
+                This project is created by group
+                <strong th:text="${group}">se.yrgo</strong>
+                as part of the Spring Boot Controller & View assignment.
+            </p>
+        </div>
+    </div>
+</div>
+
+<footer class="bg-dark text-white text-center py-3">
+    <p class="mb-0">© 2025 Book Club | Group: <span th:text="${group}">se.yrgo</span></p>
 </footer>
 </body>
 </html>
