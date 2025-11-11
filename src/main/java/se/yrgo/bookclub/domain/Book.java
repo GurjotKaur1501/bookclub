@@ -1,3 +1,4 @@
+
 package se.yrgo.bookclub.domain;
 
 public class Book {
@@ -7,13 +8,17 @@ public class Book {
 
     public Book() {}
 
+    public Book(String title, String author) {
+        this(title, author, null);
+    }
+
     public Book(String title, String author, String genre) {
         this.title = title;
         this.author = author;
         this.genre = genre;
     }
 
-    // getters and setters
+    // getters & setters
     public String getTitle() { return title; }
     public void setTitle(String title) { this.title = title; }
 
