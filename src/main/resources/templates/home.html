@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Book Club - Home</title>
+</head>
+<body>
+<header>
+    <h1 th:text="${greeting}">Welcome to Book Club</h1>
+    <p>Today's date: <span th:text="${date}">2025-11-11</span></p>
+</header>
+
+<nav>
+    <a href="/home">Home</a> |
+    <a href="/books">Recommended books</a> |
+    <a href="/genre">Genres</a>
+</nav>
+
+<section>
+    <p>This is a simple Book Club web application for group <strong th:text="${group}">se.yrgo</strong>.</p>
+</section>
+
+<footer>
+    <p>Group: <span th:text="${group}">se.yrgo</span></p>
+</footer>
+</body>
+</html>

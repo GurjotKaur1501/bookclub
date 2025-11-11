@@ -53,7 +53,7 @@ public class BookController {
         model.addAttribute("group", "se.yrgo");
         return "booklist";
     }
-    
+
     @GetMapping("/genre")
     public String genre(@RequestParam(name = "type", required = false) String type, Model model) {
         List<Book> books = createSampleBooks();
