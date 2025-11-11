@@ -41,4 +41,6 @@ The app displays a list of recommended books and lets users explore books by gen
    - run.bat
   3. **Open the application in a browser**
      http://localhost:8080/home
+     http://localhost:8080/books
+     http://localhost:8080/genre
 
