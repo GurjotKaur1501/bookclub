@@ -30,7 +30,7 @@ The app displays a list of recommended books and lets users explore books by gen
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/<your-username>/bookclub-se-yrgo.git
+   git clone https://github.com/GurjotKaur1501/bookclub.git
    cd bookclub-se-yrgo
 
 2. **Run the application**
