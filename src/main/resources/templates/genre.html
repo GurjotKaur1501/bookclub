@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Book Club - Genres</title>
+</head>
+<body>
+<header>
+    <h1>Genres</h1>
+</header>
+
+<nav>
+    <a href="/home">Home</a> |
+    <a href="/books">Recommended books</a> |
+    <a href="/genre">Genres</a>
+</nav>
+
+<section>
+    <div th:if="${selectedGenre}">
+        <h2 th:text="'Books in genre: ' + ${selectedGenre}">Selected Genre</h2>
+
+        <div th:if="${#lists.isEmpty(filteredBooks)}">
+            <p>No books available in this genre.</p>
+        </div>
+
+        <ul th:if="${!#lists.isEmpty(filteredBooks)}">
+            <li th:each="b : ${filteredBooks}">
+                <span th:text="${b.title}">Title</span> — <em th:text="${b.author}">Author</em>
+            </li>
+        </ul>
+
+        <p><a href="/genre">Back to genre list</a></p>
+    </div>
+
+    <!-- Otherwise show the list of genres -->
+    <div th:if="${selectedGenre == null}">
+        <p>Select a genre to see books in it:</p>
+        <ul>
+            <li th:each="g : ${genres}">
+                <a th:href="'/genre?type=' + ${g}" th:text="${g}">Genre</a>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<footer>
+    <p>Group: <span th:text="${group}">se.yrgo</span></p>
+</footer>
+</body>
+</html>
